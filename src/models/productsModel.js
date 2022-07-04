@@ -6,7 +6,7 @@ const getAll = async () => {
 };
 
 const getId = async (id) => {
-  const [product] = await connection.query('SELECT * FROM products WHERE id = ?', [id]);
+  const [[product]] = await connection.query('SELECT * FROM products WHERE id = ?', [id]);
   return product;
 };
 
