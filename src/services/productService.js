@@ -12,6 +12,19 @@ const getAll = async () => {
   return result;
 };
 
+const getId = async (id) => {
+  const resul = await productModel.getId(id);
+  if (!resul) {
+    const error = {
+      status: 404,
+      message: 'Product not found',
+    };
+    throw error;
+  }
+  return resul;
+};
+
 module.exports = {
   getAll,
+  getId,
 };
