@@ -1,7 +1,7 @@
 const express = require('express');
 require('express-async-errors');
 
-const handleError = require('./middlewares/handlerError');
+const handleError = require('./src/middlewares/handlerError');
 
 const app = express();
 
