@@ -14,7 +14,7 @@ const getAll = async () => {
 
 const getId = async (id) => {
   const resul = await productModel.getId(id);
-  if (!resul) {
+  if (resul.length === 0) {
     const error = {
       status: 404,
       message: 'Product not found',
