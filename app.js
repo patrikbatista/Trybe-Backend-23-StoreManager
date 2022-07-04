@@ -6,7 +6,7 @@ const productsRoute = require('./src/routes/productsRoute');
 
 const app = express();
 
-app.use('products', productsRoute);
+app.use('/products', productsRoute);
 app.use(handleError);
 // não remova esse endpoint, é para o avaliador funcionar
 app.get('/', (_request, response) => {
