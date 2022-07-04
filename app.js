@@ -3,12 +3,14 @@ require('express-async-errors');
 
 const handleError = require('./src/middlewares/handlerError');
 const productsRoute = require('./src/routes/productsRoute');
+const salesRoute = require('./src/routes/salesRoute');
 
 const app = express();
 
 app.use(express.json());
 
 app.use('/products', productsRoute);
+app.use('/sales', salesRoute);
 app.use(handleError);
 // não remova esse endpoint, é para o avaliador funcionar
 app.get('/', (_request, response) => {
