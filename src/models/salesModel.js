@@ -8,7 +8,7 @@ const postSales = async (array) => {
 };
 
 const postNewSale = async () => {
-  const [result] = await connection.query('INSERT INTO sales (date) VALUES (now())');
+  const [result] = await connection.query('INSERT INTO sales (date) VALUES (NOW())');
   return result.insertId;
 };
 
