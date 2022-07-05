@@ -14,7 +14,7 @@ const addSale = async (arraySales) => {
 
 const getSales = async () => {
   const result = await saleModel.getSales();
-  if (result.length === 0) {
+  if (!result) {
     const error = {
       status: 404,
       message: 'Sale not found',
@@ -25,15 +25,15 @@ const getSales = async () => {
 };
 
 const getSaleId = async (id) => {
-  const resul = await saleModel.getSaleId(id);
-  if (!resul) {
+  const result = await saleModel.getSaleId(id);
+  if (result.length === 0) {
     const error = {
       status: 404,
       message: 'Sale not found',
     };
     throw error;
   }
-  return resul;
+  return result;
 };
 
 module.exports = {
