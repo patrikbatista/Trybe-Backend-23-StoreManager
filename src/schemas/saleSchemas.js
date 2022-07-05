@@ -1,25 +1,17 @@
-const productsModel = require('../models/productsModel');
-
-const isProductId = async (id) => {
-  if (Number(id) === undefined) {
+const isProductId = (array) => {
+  const idUndefined = array.find((element) => element.productId === undefined);
+  if (idUndefined) {
     const error = {
       status: 400,
       message: '"productId" is required',
     };
     throw error;
   }
-  const productExist = await productsModel.getId(Number(id));
-  if (!productExist) {
-    const error = {
-      status: 404,
-      message: 'Product not found',
-    };
-    throw error;
-  }
 };
 
-const isQuantity = (quantity) => {
-  if (Number(quantity) === undefined) {
+const isQuantity = (array) => {
+  const quantityUndefined = array.find((element) => element.quantity === undefined);
+  if (quantityUndefined) {
     const error = {
       status: 400,
       message: '"quantity" is required',
@@ -27,19 +19,19 @@ const isQuantity = (quantity) => {
     throw error;
   }
 
-  if (Number(quantity) <= 0) {
+  const quantityLessThenZero = array.find((element) => Number(element.quantity) <= 0);
+  if (quantityLessThenZero) {
     const error = {
-      status: 400,
+      status: 422,
       message: '"quantity" must be greater than or equal to 1',
     };
     throw error;
   }
 };
+
 const salesValidate = (sales) => {
-  sales.forEach((sale) => {
-    isProductId(sale.productId);
-    isQuantity(sales.quantity);
- });
+  isProductId(sales);
+  isQuantity(sales);
 };
 
 module.exports = {
