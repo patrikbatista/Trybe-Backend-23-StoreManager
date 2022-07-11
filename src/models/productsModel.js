@@ -18,7 +18,7 @@ const add = async (name) => {
 
 const updateProductId = async (id, name, quantity) => {
   const result = await connection
-  .query('UPDATE products SET name = ?, quantity = ? WHERE id = ?', [name, quantity, id]);
+  .query('UPDATE products SET name = ? WHERE id = ?', [name, id]);
   return result;
 };
 

@@ -24,11 +24,11 @@ const addProduct = async (req, res) => {
 };
 
 const updateProduct = async (req, res) => {
-  const { name } = req.body;
+  const { name, id } = req.body;
   productSchemas.isName(name);
   await productService.getId;
-  await productService.updateProduct(name);
-  res.status(200).json(name);
+  await productService.updateProduct(id);
+  res.status(200).json({ id, name });
 };
 
 module.exports = {
