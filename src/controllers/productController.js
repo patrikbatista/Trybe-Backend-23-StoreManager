@@ -24,17 +24,20 @@ const addProduct = async (req, res) => {
 };
 
 const updateProduct = async (req, res) => {
-  const { name, id } = req.body;
+  const { name } = req.body;
+  const { id } = req.params;
+
   productSchemas.isName(name);
-  await productService.getId;
-  await productService.updateProduct(id);
-  res.status(200).json({ id, name });
+  await productService.getId(id);
+  await productService.updateProduct(name, id);
+  const result = await productService.getId(id);
+  res.status(200).json(result);
 };
 
 const deleteProduct = async (req, res) => {
-  const { id } = req.body;
+  const { id } = req.params;
 
-  await productService.getId;
+  await productService.getId(id);
   await productService.deleteProduct(id);
   res.status(204);
 };

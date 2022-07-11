@@ -16,7 +16,7 @@ const add = async (name) => {
   return { id: newProduct.insertId, name };
 };
 
-const updateProductId = async (id, name) => {
+const updateProductId = async (name, id) => {
   const result = await connection
   .query('UPDATE products SET name = ? WHERE id = ?', [name, id]);
   return result;
@@ -24,7 +24,7 @@ const updateProductId = async (id, name) => {
 
 const deleteProductId = async (id) => {
  const result = await connection.query('DELETE FROM products WHERE id = ?', [id]);
- console.log(result);
+
  return result;
 };
 
