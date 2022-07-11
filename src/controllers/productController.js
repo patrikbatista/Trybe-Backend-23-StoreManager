@@ -1,14 +1,15 @@
 const productService = require('../services/productService');
+const productSchemas = require('../schemas/productSchemas');
 
 const getAll = async (req, res) => {
   const products = await productService.getAll();
-  res.status(200).json(products);
+  return res.status(200).json(products);
 };
 
 const getId = async (req, res) => {
   const { id } = req.params;
   const product = await productService.getId(id);
-  res.status(200).json(product);
+  return res.status(200).json(product);
 };
 
 const addProduct = async (req, res) => {
@@ -19,11 +20,20 @@ const addProduct = async (req, res) => {
   }
 
   const newProduct = await productService.addProduct(name);
-  res.status(201).json(newProduct);
+  return res.status(201).json(newProduct);
+};
+
+const updateProduct = async (req, res) => {
+  const { name } = req.body;
+  productSchemas.isName(name);
+  await productService.getId;
+  await productService.updateProduct(name);
+  res.status(200).json(name);
 };
 
 module.exports = {
   getAll,
   getId,
   addProduct,
+  updateProduct,
 };
