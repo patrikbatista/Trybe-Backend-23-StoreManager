@@ -31,7 +31,7 @@ const updateProduct = async (req, res) => {
   await productService.getId(id);
   await productService.updateProduct(name, id);
   const result = await productService.getId(id);
-  res.status(200).json(result);
+  return res.status(200).json(result);
 };
 
 const deleteProduct = async (req, res) => {
@@ -39,7 +39,7 @@ const deleteProduct = async (req, res) => {
 
   await productService.getId(id);
   await productService.deleteProduct(id);
-  res.status(204);
+  return res.status(204).end();
 };
 
 module.exports = {
