@@ -16,7 +16,7 @@ const add = async (name) => {
   return { id: newProduct.insertId, name };
 };
 
-const updateProductId = async (id, name, quantity) => {
+const updateProductId = async (id, name) => {
   const result = await connection
   .query('UPDATE products SET name = ? WHERE id = ?', [name, id]);
   return result;
