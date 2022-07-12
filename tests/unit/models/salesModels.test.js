@@ -58,9 +58,9 @@ const CONTEUDO_DO_ARRAY_GETSALES_ID = [[
 //   }
 //   ]]
 
-describe('1 Teste camada Sales model', () => {
+describe('2 Teste camada Sales model', () => {
 
-  describe('1.1 Teste de postSales model', () => {
+  describe('2.1 Teste de postSales model', () => {
     beforeEach(() => {
         sinon.stub(connection, 'query').returns(CONTEUDO_DO_ARRAY_POSTSALES);
       })
@@ -74,7 +74,7 @@ describe('1 Teste camada Sales model', () => {
       });
   })
 
-  describe('1.2 Teste postNewSale', () => {
+  describe('2.2 Teste postNewSale', () => {
       beforeEach(() => {
         sinon.stub(connection, 'query').returns(CONTEUDO_DO_ARRAY_POSTNEWSALES);
       })
@@ -93,7 +93,7 @@ describe('1 Teste camada Sales model', () => {
       });
     });
 
-  describe('1.3 Teste getSales', () => {
+  describe('2.3 Teste getSales', () => {
       beforeEach(() => {
         sinon.stub(connection, 'query').returns(CONTEUDO_DO_ARRAY_GETSALES);
       })
@@ -107,7 +107,7 @@ describe('1 Teste camada Sales model', () => {
       });
   });
 
-  describe('1.4 Teste getSalesId', () => {
+  describe('2.4 Teste getSalesId', () => {
       beforeEach(() => {
         sinon.stub(connection, 'query').returns(CONTEUDO_DO_ARRAY_GETSALES_ID);
       })
