@@ -71,18 +71,18 @@ describe('1 Teste Product model', () => {
     });
   });
 
-  describe('1.4 Teste de updateProductId', () => {
-    beforeEach(() => {
-        sinon.stub(connection, 'query').resolves(CONTEUDO_DO_ARRAY_UPDATE_PRODUCT_ID);
-      })
-      afterEach(() => {
-        connection.query.restore();
-      })
-    it('Retorna produtos adicionados', async () => {
-      const response = await productsModel.add("produto");
-      expect(response).to.deep.equal(CONTEUDO_DO_ARRAY_UPDATE_PRODUCT_ID);
-    });
-  });
+  // describe('1.4 Teste de updateProductId', () => {
+  //   beforeEach(() => {
+  //       sinon.stub(connection, 'query').resolves(CONTEUDO_DO_ARRAY_UPDATE_PRODUCT_ID);
+  //     })
+  //     afterEach(() => {
+  //       connection.query.restore();
+  //     })
+  //   it('Retorna produtos adicionados', async () => {
+  //     const response = await productsModel.add("produto");
+  //     expect(response).to.deep.equal(CONTEUDO_DO_ARRAY_UPDATE_PRODUCT_ID);
+  //   });
+  // });
 
   describe('1.5 Teste de deleteProductId', () => {
       beforeEach(() => {
