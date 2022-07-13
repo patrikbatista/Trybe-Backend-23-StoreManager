@@ -1,9 +1,9 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
 
-const servicesProducts = require('../../../src/services/productService');
+const servicesProducts = require('../../../services/productService');
 
-const productsModel = require('../../../src/models/productsModel');
+const productsModel = require('../../../models/productsModel');
 
 
 const arrayProducts = [

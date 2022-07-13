@@ -1,8 +1,8 @@
 // const { expect } = require('chai');
 // const sinon = require('sinon');
 
-// const servicesSales = require('../../../src/services/saleService');
-// const salesModel = require('../../../src/models/salesModel');
+// const servicesSales = require('../../../services/saleService');
+// const salesModel = require('../../../models/salesModel');
 
 // describe('2 Services de sales', () => {
 //     describe('2.1 productValidate ', () => {

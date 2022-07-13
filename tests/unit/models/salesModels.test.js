@@ -2,8 +2,8 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
 
-const connection = require('../../../src/models/connection');
-const salesModels = require('../../../src/models/salesModel');
+const connection = require('../../../models/connection');
+const salesModels = require('../../../models/salesModel');
 
 const CONTEUDO_DO_ARRAY_POSTSALES = [[
   {

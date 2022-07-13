@@ -1,9 +1,9 @@
 const express = require('express');
 require('express-async-errors');
 
-const handleError = require('./src/middlewares/handlerError');
-const productsRoute = require('./src/routes/productsRoute');
-const salesRoute = require('./src/routes/salesRoute');
+const handleError = require('./middlewares/handlerError');
+const productsRoute = require('./routes/productsRoute');
+const salesRoute = require('./routes/salesRoute');
 
 const app = express();
 

@@ -1,8 +1,8 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
 
-const connection = require('../../../src/models/connection');
-const productsModel = require('../../../src/models/productsModel');
+const connection = require('../../../models/connection');
+const productsModel = require('../../../models/productsModel');
 
 const CONTEUDO_DO_ARRAY_GETALL = [[
   {
@@ -60,7 +60,7 @@ describe('1 Teste Product model', () => {
 
   describe('1.3 Teste de add', () => {
     beforeEach(() => {
-        sinon.stub(connection, 'query').returns(CONTEUDO_ARRAY_POST_PRODUCTS);
+        sinon.stub(connection, 'query').resolves(CONTEUDO_ARRAY_POST_PRODUCTS);
       })
       afterEach(() => {
         connection.query.restore();
@@ -71,22 +71,22 @@ describe('1 Teste Product model', () => {
     });
   });
 
-  // describe('1.4 Teste de updateProductId', () => {
-  //   beforeEach(() => {
-  //       sinon.stub(connection, 'query').returns(CONTEUDO_DO_ARRAY_UPDATE_PRODUCT_ID);
-  //     })
-  //     afterEach(() => {
-  //       connection.query.restore();
-  //     })
-  //   it('Retorna produtos adicionados', async () => {
-  //     const response = await productsModel.add("produto");
-  //     expect(response).to.deep.equal(CONTEUDO_DO_ARRAY_UPDATE_PRODUCT_ID);
-  //   });
-  // });
+  describe('1.4 Teste de updateProductId', () => {
+    beforeEach(() => {
+        sinon.stub(connection, 'query').resolves(CONTEUDO_DO_ARRAY_UPDATE_PRODUCT_ID);
+      })
+      afterEach(() => {
+        connection.query.restore();
+      })
+    it('Retorna produtos adicionados', async () => {
+      const response = await productsModel.add("produto");
+      expect(response).to.deep.equal(CONTEUDO_DO_ARRAY_UPDATE_PRODUCT_ID);
+    });
+  });
 
   describe('1.5 Teste de deleteProductId', () => {
       beforeEach(() => {
-        sinon.stub(connection, 'query').returns(CONTEUDO_DELECT_PRODUCT_ID);
+        sinon.stub(connection, 'query').resolves(CONTEUDO_DELECT_PRODUCT_ID);
       })
       afterEach(() => {
         connection.query.restore();

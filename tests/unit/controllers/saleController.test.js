@@ -1,7 +1,7 @@
 const { expect } = require('chai')
 const sinon = require('sinon')
-const saleService = require('../../../src/services/saleService')
-const saleController = require('../../../src/controllers/saleController')
+const saleService = require('../../../services/saleService')
+const saleController = require('../../../controllers/saleController')
 
 describe('4 Testa camada de Controller de Sale', () => {
   let req = {}
