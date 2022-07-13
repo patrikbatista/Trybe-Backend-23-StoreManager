@@ -45,15 +45,15 @@ describe('1 Teste Product model', () => {
     });
   });
 
-  describe('1.2 Teste de getId', () => {
+  describe.only('1.2 Teste de getId', () => {
     beforeEach(() => {
         sinon.stub(connection, 'query').returns(CONTEUDO_ARRAY_GET_ID);
       })
       afterEach(() => {
         connection.query.restore();
       })
-    it('retorna array de produtos pelo id', async () => {
-        const resposta = await productsModel.getId();
+    it('retorna um produto id', async () => {
+        const resposta = await productsModel.getId(1);
         expect(resposta).to.be.equal(CONTEUDO_ARRAY_GET_ID[0][0]);
       });
   });

@@ -50,33 +50,33 @@ describe('1 Testando camada service', () => {
       });
     });
 
-    describe('1.1.2 allProducts', () => {
-      before(() => {
-        sinon.stub(productsModel, 'getAll').resolves(arrayProducts);
-      });
-      after(() => {
-        productsModel.getAll.restore();
-      });
+    // describe('1.1.2 allProducts', () => {
+    //   before(() => {
+    //     sinon.stub(productsModel, 'getAll').resolves(arrayProducts);
+    //   });
+    //   after(() => {
+    //     productsModel.getAll.restore();
+    //   });
 
-      it('Listando todos os produtos', async() => {
-        const response = await servicesProducts.getAll();
-        expect(response).to.be.deep.equal(arrayProducts);
-      });
-    });
+    //   it('Listando todos os produtos', async() => {
+    //     const response = await servicesProducts.getAll();
+    //     expect(response).to.be.deep.equal(arrayProducts);
+    //   });
+    // });
 
-    describe('1.1.3 testando getId', () => {
-      before(() => {
-        sinon.stub(productsModel, 'getId').resolves(noIdProduct);
-      });
-      after(() => {
-        productsModel.getId.restore();
-      });
+    // describe('1.1.3 testando getId', () => {
+    //   before(() => {
+    //     sinon.stub(productsModel, 'getId').resolves(noIdProduct);
+    //   });
+    //   after(() => {
+    //     productsModel.getId.restore();
+    //   });
 
-      it('Exibindo produto', async() => {
-        const response = await servicesProducts.getId();
-        expect(response).to.be.deep.equal(noIdProduct);
-      });
-    });
+    //   it('Exibindo produto', async() => {
+    //     const response = await servicesProducts.getId();
+    //     expect(response).to.be.deep.equal(noIdProduct);
+    //   });
+    // });
 
     describe('1.1.4 testando updateProduct', () => {
       before(() => {
@@ -92,18 +92,18 @@ describe('1 Testando camada service', () => {
       });
     });
 
-    describe('1.1.5 deleteProducts', () => {
-      before(() => {
-        sinon.stub(productsModel, 'deleteProductId').resolves(arrayProductDelete);
-      });
-      after(() => {
-        productsModel.deleteProductId.restore();
-      });
+    // describe('1.1.5 deleteProducts', () => {
+    //   before(() => {
+    //     sinon.stub(productsModel, 'deleteProductId').resolves(arrayProductDelete);
+    //   });
+    //   after(() => {
+    //     productsModel.deleteProductId.restore();
+    //   });
 
-      it('deletando produto', async() => {
-        const response = await servicesProducts.deleteProduct(1);
-        expect(response).to.be.deep.equal(undefined);
-      });
-    });
+    //   it('deletando produto', async() => {
+    //     const response = await servicesProducts.deleteProduct(1);
+    //     expect(response).to.be.deep.equal(undefined);
+    //   });
+    // });
   });
 });
