@@ -45,7 +45,7 @@ describe('1 Teste Product model', () => {
     });
   });
 
-  describe.only('1.2 Teste de getId', () => {
+  describe('1.2 Teste de getId', () => {
     beforeEach(() => {
         sinon.stub(connection, 'query').returns(CONTEUDO_ARRAY_GET_ID);
       })
